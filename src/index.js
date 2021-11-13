@@ -1,105 +1,156 @@
+const inquirer = require("inquirer");
 const fs = require("fs");
 
 // declare questions
-const questions = [];
+const questions = [
+  {
+    type: "input",
+    name: "question 1",
+    message: "What is the title of the project?",
+  },
+  {
+    type: "input",
+    name: "question 2",
+    message: "What is the description?",
+  },
+  {
+    type: "input",
+    name: "question 3",
+    message: "What is the installation script?",
+  },
+  {
+    type: "input",
+    name: "question 4",
+    message: "How do I use the application?",
+  },
+  {
+    type: "input",
+    name: "question 5",
+    message: "How do I test the application? ",
+  },
+  {
+    type: "list",
+    name: "question 6",
+    message: "Choose a license:",
+  },
+  {
+    type: "input",
+    name: "question 7",
+    message: "What is your github username?",
+  },
+  {
+    type: "input",
+    name: "question 8",
+    message: "What is your email?",
+  },
+  {
+    type: "input",
+    name: "question 9",
+    message: "How can people contribute to this app?",
+  },
+];
 
-const generateTitle = (answers) => {
-  return `# TITLE ![MIT](https://img.shields.io/static/v1?label=MIT&message=License&color=green)`;
-};
+inquirer.prompt(questions);
 
-const generateTableOfContents = (answers) => {
-  return `## Table of Contents
-  
-  - [Description](#description)
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [Tests](#tests)
-  - [Contributing](#contributing)
-  - [License](#license)`;
-};
+const answers = [];
 
-const generateDescription = (answers) => {
-  return `## Description
-  
-  ADD TEXT HERE`;
-};
+// const generateTitle = (answers) => {
+//   return `# TITLE ![MIT](https://img.shields.io/static/v1?label=MIT&message=License&color=green)`;
+// };
 
-const generateInstallation = (answers) => {
-  return `## Installation
-  
-  Run the following script to install the packages required for the application:
-  
-  \`\`\`
-  ADD TEXT HERE
-  \`\`\``;
-};
+// const generateTableOfContents = (answers) => {
+//   return `## Table of Contents
 
-const generateUsage = (answers) => {
-  return `## Usage
-  
-  To use the application run the following script:
-  
-  \`\`\`
-  ADD TEXT HERE
-  \`\`\``;
-};
+//   - [Description](#description)
+//   - [Installation](#installation)
+//   - [Usage](#usage)
+//   - [Tests](#tests)
+//   - [Contributing](#contributing)
+//   - [License](#license)`;
+// };
 
-const generateTests = (answers) => {
-  return `## Tests
-  
-  To use the application run the following script:
-  
-  \`\`\`
-  ADD TEXT HERE
-  \`\`\``;
-};
+// const generateDescription = (answers) => {
+//   return `## Description
 
-const generateContributing = (answers) => {
-  return `## Contributing
-  
-  ADD TEXT HERE`;
-};
+//   ADD TEXT HERE`;
+// };
 
-const generateLicense = (answers) => {
-  return `## License
-  
-  ADD TEXT HERE`;
-};
+// const generateInstallation = (answers) => {
+//   return `## Installation
 
-const generateReadme = (answers) => {
-  return `${generateTitle(answers)}
+//   Run the following script to install the packages required for the application:
 
-  ${generateTableOfContents(answers)}
-  
-  ${generateDescription(answers)}
-  
-  ${generateInstallation(answers)}
-  
-  ${generateUsage(answers)}
-  
-  ${generateTests(answers)}
-  
-  ${generateContributing(answers)}
-  
-  ${generateLicense(answers)}
-  `;
-};
+//   \`\`\`
+//   ADD TEXT HERE
+//   \`\`\``;
+// };
 
-const writeToFile = (filePath, data) => {
-  try {
-    fs.writeFileSync(filePath, data);
-  } catch (error) {
-    console.log(error.message);
-  }
-};
+// const generateUsage = (answers) => {
+//   return `## Usage
 
-const init = async () => {
-  // prompt the questions using inquirer
-  // generate readme based on answers
-  const readme = generateReadme();
+//   To use the application run the following script:
 
-  // write generated readme to a file
-  writeToFile("GENERATED_README.md", readme);
-};
+//   \`\`\`
+//   ADD TEXT HERE
+//   \`\`\``;
+// };
 
-init();
+// const generateTests = (answers) => {
+//   return `## Tests
+
+//   To use the application run the following script:
+
+//   \`\`\`
+//   ADD TEXT HERE
+//   \`\`\``;
+// };
+
+// const generateContributing = (answers) => {
+//   return `## Contributing
+
+//   ADD TEXT HERE`;
+// };
+
+// const generateLicense = (answers) => {
+//   return `## License
+
+//   ADD TEXT HERE`;
+// };
+
+// const generateReadme = (answers) => {
+//   return `${generateTitle(answers)}
+
+//   ${generateTableOfContents(answers)}
+
+//   ${generateDescription(answers)}
+
+//   ${generateInstallation(answers)}
+
+//   ${generateUsage(answers)}
+
+//   ${generateTests(answers)}
+
+//   ${generateContributing(answers)}
+
+//   ${generateLicense(answers)}
+//   `;
+// };
+
+// const writeToFile = (filePath, data) => {
+//   try {
+//     fs.writeFileSync(filePath, data);
+//   } catch (error) {
+//     console.log(error.message);
+//   }
+// };
+
+// const init = async () => {
+//   // prompt the questions using inquirer
+//   // generate readme based on answers
+//   const readme = generateReadme();
+
+//   // write generated readme to a file
+//   writeToFile("GENERATED_README.md", readme);
+// };
+
+// init();

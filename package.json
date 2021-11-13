@@ -1,0 +1,23 @@
+{
+  "name": "readme-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd src && node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AsmaaMusse/readme-generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AsmaaMusse/readme-generator/issues"
+  },
+  "homepage": "https://github.com/AsmaaMusse/readme-generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.0"
+  }
+}

@@ -1,156 +1,90 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
+const util = require("./util");
 
 // declare questions
 const questions = [
   {
     type: "input",
-    name: "question 1",
+    name: "title",
     message: "What is the title of the project?",
   },
   {
     type: "input",
-    name: "question 2",
+    name: "description",
     message: "What is the description?",
   },
   {
     type: "input",
-    name: "question 3",
-    message: "What is the installation script?",
-  },
-  {
-    type: "input",
-    name: "question 4",
+    name: "applicationUse",
     message: "How do I use the application?",
   },
   {
     type: "input",
-    name: "question 5",
-    message: "How do I test the application? ",
-  },
-  {
-    type: "list",
-    name: "question 6",
-    message: "Choose a license:",
+    name: "applicationTest",
+    message: "How do I test the application?",
   },
   {
     type: "input",
-    name: "question 7",
+    name: "github",
     message: "What is your github username?",
   },
   {
     type: "input",
-    name: "question 8",
+    name: "email",
     message: "What is your email?",
   },
   {
     type: "input",
-    name: "question 9",
+    name: "contribution",
     message: "How can people contribute to this app?",
+  },
+  {
+    type: "confirm",
+    name: "license",
+    message: "Do you want to add a license badge?",
+  },
+  {
+    type: "confirm",
+    name: "installation",
+    message: "Do you have an installation process?",
+    default: false,
   },
 ];
 
-inquirer.prompt(questions);
+// Installation related questions
+const licenseQuestion = [
+  {
+    type: "list",
+    name: "license",
+    message: "Choose a license type:",
+    choices: ["MIT", "GPL 3.0", "Apache", "BSD", "GPL 2.0"],
+  },
+];
 
-const answers = [];
+const installationQuestion = [
+  {
+    type: "input",
+    name: "installation",
+    message: "what is your installation process?",
+  },
+];
 
-// const generateTitle = (answers) => {
-//   return `# TITLE ![MIT](https://img.shields.io/static/v1?label=MIT&message=License&color=green)`;
-// };
+const start = async () => {
+  // prompt questions and get answers
+  const answers = await inquirer.prompt(questions);
 
-// const generateTableOfContents = (answers) => {
-//   return `## Table of Contents
+  if (answers.license) {
+    // ask license question
+    const licenseAnswer = await inquirer.prompt(licenseQuestion);
+  }
 
-//   - [Description](#description)
-//   - [Installation](#installation)
-//   - [Usage](#usage)
-//   - [Tests](#tests)
-//   - [Contributing](#contributing)
-//   - [License](#license)`;
-// };
+  if (answers.installation) {
+    // ask installation question
+    const installationAnswer = await inquirer.prompt(installationQuestion);
+  }
 
-// const generateDescription = (answers) => {
-//   return `## Description
+  console.log(answers);
+};
 
-//   ADD TEXT HERE`;
-// };
-
-// const generateInstallation = (answers) => {
-//   return `## Installation
-
-//   Run the following script to install the packages required for the application:
-
-//   \`\`\`
-//   ADD TEXT HERE
-//   \`\`\``;
-// };
-
-// const generateUsage = (answers) => {
-//   return `## Usage
-
-//   To use the application run the following script:
-
-//   \`\`\`
-//   ADD TEXT HERE
-//   \`\`\``;
-// };
-
-// const generateTests = (answers) => {
-//   return `## Tests
-
-//   To use the application run the following script:
-
-//   \`\`\`
-//   ADD TEXT HERE
-//   \`\`\``;
-// };
-
-// const generateContributing = (answers) => {
-//   return `## Contributing
-
-//   ADD TEXT HERE`;
-// };
-
-// const generateLicense = (answers) => {
-//   return `## License
-
-//   ADD TEXT HERE`;
-// };
-
-// const generateReadme = (answers) => {
-//   return `${generateTitle(answers)}
-
-//   ${generateTableOfContents(answers)}
-
-//   ${generateDescription(answers)}
-
-//   ${generateInstallation(answers)}
-
-//   ${generateUsage(answers)}
-
-//   ${generateTests(answers)}
-
-//   ${generateContributing(answers)}
-
-//   ${generateLicense(answers)}
-//   `;
-// };
-
-// const writeToFile = (filePath, data) => {
-//   try {
-//     fs.writeFileSync(filePath, data);
-//   } catch (error) {
-//     console.log(error.message);
-//   }
-// };
-
-// const init = async () => {
-//   // prompt the questions using inquirer
-//   // generate readme based on answers
-//   const readme = generateReadme();
-
-//   // write generated readme to a file
-//   writeToFile("GENERATED_README.md", readme);
-// };
-
-// init();
+start();

@@ -178,5 +178,18 @@ const writeToFile = (filePath, data) => {
   }
 };
 
+const init = async () => {
+  // prompt the questions using inquirer
+  inquirer.prompt([{ questions }]).then(function (answers) {
+    console.log(answers);
+  });
+
+  // generate readme based on answers
+  const readme = generateReadme();
+
+  // write generated readme to a file
+  writeToFile("GENERATED_README.md", readme);
+};
+
 init();
 start();

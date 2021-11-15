@@ -2,7 +2,7 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require("./util");
 
-// declare questions
+// Declare questions
 const questions = [
   {
     type: "input",
@@ -16,12 +16,12 @@ const questions = [
   },
   {
     type: "input",
-    name: "applicationUse",
+    name: "usage",
     message: "How do I use the application?",
   },
   {
     type: "input",
-    name: "applicationTest",
+    name: "test",
     message: "How do I test the application?",
   },
   {
@@ -52,7 +52,7 @@ const questions = [
   },
 ];
 
-// Installation related questions
+// License related question
 const licenseQuestion = [
   {
     type: "list",
@@ -62,6 +62,7 @@ const licenseQuestion = [
   },
 ];
 
+// Installation related question
 const installationQuestion = [
   {
     type: "input",
@@ -87,4 +88,95 @@ const start = async () => {
   console.log(answers);
 };
 
+const generateTitle = (answers) => {
+  return `# TITLE ![MIT](https://img.shields.io/static/v1?label=MIT&message=License&color=green)`;
+};
+
+const generateTableOfContents = (answers) => {
+  return `## Table of Contents
+
+  - [Description](#description)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Tests](#tests)
+  - [Contributing](#contributing)
+  - [License](#license)`;
+};
+
+const generateDescription = (answers) => {
+  return `## Description
+
+  ADD TEXT HERE`;
+};
+
+const generateInstallation = (answers) => {
+  return `## Installation
+
+Run the following script to install the packages required for the application:
+
+\`\`\`
+ADD TEXT HERE
+\`\`\``;
+};
+
+const generateUsage = (answers) => {
+  return `## Usage
+
+To use the application run the following script:
+
+\`\`\`
+ADD TEXT HERE
+\`\`\``;
+};
+
+const generateTests = (answers) => {
+  return `## Tests
+
+ To use the application run the following script:
+
+ \`\`\`
+ ADD TEXT HERE
+ \`\`\``;
+};
+
+const generateContributing = (answers) => {
+  return `## Contributing
+
+ ADD TEXT HERE`;
+};
+
+const generateLicense = (answers) => {
+  return `## License
+
+ ADD TEXT HERE`;
+};
+
+const generateReadme = (answers) => {
+  return `${generateTitle(answers)}
+
+ ${generateTableOfContents(answers)}
+
+ ${generateDescription(answers)}
+
+ ${generateInstallation(answers)}
+
+ ${generateUsage(answers)}
+
+ ${generateTests(answers)}
+
+ ${generateContributing(answers)}
+
+ ${generateLicense(answers)}
+`;
+};
+
+const writeToFile = (filePath, data) => {
+  try {
+    fs.writeFileSync(filePath, data);
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
+init();
 start();

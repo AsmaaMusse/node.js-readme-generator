@@ -84,17 +84,14 @@ const start = async () => {
     // ask installation question
     const installationAnswer = await inquirer.prompt(installationQuestion);
   }
-
-  console.log(answers);
 };
 
 const generateTitle = (answers) => {
-  return `# TITLE ![MIT](https://img.shields.io/static/v1?label=MIT&message=License&color=green)`;
+  return `#Title [MIT](https://img.shields.io/static/v1?label=${answers}&message=License&color=orange)`;
 };
 
 const generateTableOfContents = (answers) => {
   return `## Table of Contents
-
   - [Description](#description)
   - [Installation](#installation)
   - [Usage](#usage)
@@ -112,21 +109,21 @@ const generateDescription = (answers) => {
 const generateInstallation = (answers) => {
   return `## Installation
 
-Run the following script to install the packages required for the application:
+ Run the following script to install the packages required for the application:
 
-\`\`\`
-ADD TEXT HERE
-\`\`\``;
+ \`\`\`
+ ADD TEXT HERE
+ \`\`\``;
 };
 
 const generateUsage = (answers) => {
   return `## Usage
 
-To use the application run the following script:
+ To use the application run the following script:
 
-\`\`\`
-ADD TEXT HERE
-\`\`\``;
+ \`\`\`
+ ADD TEXT HERE
+ \`\`\``;
 };
 
 const generateTests = (answers) => {
@@ -156,8 +153,8 @@ const generateReadme = (answers) => {
 
  ${generateTableOfContents(answers)}
 
- ${generateDescription(answers)}
-
+ ${generateDescription(answers)} 
+ 
  ${generateInstallation(answers)}
 
  ${generateUsage(answers)}
@@ -167,7 +164,7 @@ const generateReadme = (answers) => {
  ${generateContributing(answers)}
 
  ${generateLicense(answers)}
-`;
+ `;
 };
 
 const writeToFile = (filePath, data) => {
@@ -180,11 +177,9 @@ const writeToFile = (filePath, data) => {
 
 const init = async () => {
   // prompt the questions using inquirer
-  inquirer.prompt([{ questions }]).then(function (answers) {
-    console.log(answers);
-  });
+  // inquirer.prompt([{ questions }]).then(function (answers) {});
 
-  // generate readme based on answers
+  // generate readme
   const readme = generateReadme();
 
   // write generated readme to a file

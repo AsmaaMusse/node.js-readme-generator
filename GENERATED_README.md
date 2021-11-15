@@ -1,19 +1,21 @@
-# TITLE ![MIT](https://img.shields.io/static/v1?label=MIT&message=License&color=green)
+# Title ![MIT](https://img.shields.io/static/v1?label=undefined&message=License&color=bl)
 
- ## Table of Contents
-  
-  - [Description](#description)
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [Tests](#tests)
-  - [Contributing](#contributing)
-  - [License](#license)
+## Table of Contents
 
- ## Description
-  
-  ADD TEXT HERE
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Tests](#tests)
+- [Contributing](#contributing)
+- [License](#license)
 
- ## Installation
+## Description
+
+```
+ ADD TEXT HERE
+```
+
+## Installation
 
 Run the following script to install the packages required for the application:
 
@@ -21,7 +23,7 @@ Run the following script to install the packages required for the application:
 ADD TEXT HERE
 ```
 
- ## Usage
+## Usage
 
 To use the application run the following script:
 
@@ -29,18 +31,22 @@ To use the application run the following script:
 ADD TEXT HERE
 ```
 
- ## Tests
+## Tests
 
- To use the application run the following script:
+To use the application run the following script:
 
- ```
- ADD TEXT HERE
- ```
+```
+ADD TEXT HERE
+```
 
- ## Contributing
+## Contributing
 
- ADD TEXT HERE
+```
+ADD TEXT HERE
+```
 
- ## License
+## License
 
- ADD TEXT HERE
+```
+ADD TEXT HERE
+```

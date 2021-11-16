@@ -1,4 +1,4 @@
-# Title ![MIT](https://img.shields.io/static/v1?label=undefined&message=License&color=bl)
+# Title [MIT](https://img.shields.io/static/v1?label=code&message=License&color=orange)
 
 ## Table of Contents
 
@@ -11,16 +11,14 @@
 
 ## Description
 
-```
- ADD TEXT HERE
-```
+a
 
 ## Installation
 
 Run the following script to install the packages required for the application:
 
 ```
-ADD TEXT HERE
+a
 ```
 
 ## Usage
@@ -28,7 +26,7 @@ ADD TEXT HERE
 To use the application run the following script:
 
 ```
-ADD TEXT HERE
+a
 ```
 
 ## Tests
@@ -36,17 +34,13 @@ ADD TEXT HERE
 To use the application run the following script:
 
 ```
-ADD TEXT HERE
+undefined
 ```
 
 ## Contributing
 
-```
-ADD TEXT HERE
-```
+a
 
 ## License
 
-```
-ADD TEXT HERE
-```
+MIT

@@ -40,54 +40,39 @@ const questions = [
     message: "How can people contribute to this app?",
   },
   {
-    type: "confirm",
-    name: "license",
-    message: "Do you want to add a license badge?",
-  },
-  {
-    type: "confirm",
-    name: "installation",
-    message: "Do you have an installation process?",
-    default: false,
-  },
-];
-
-// License related question
-const licenseQuestion = [
-  {
     type: "list",
     name: "license",
     message: "Choose a license type:",
     choices: ["MIT", "GPL 3.0", "Apache", "BSD", "GPL 2.0"],
   },
-];
-
-// Installation related question
-const installationQuestion = [
   {
     type: "input",
     name: "installation",
-    message: "what is your installation process?",
+    message: "What is your installation process?",
   },
 ];
 
 const start = async () => {
   // prompt questions and get answers
   const answers = await inquirer.prompt(questions);
+  const readme = generateReadme(answers);
 
-  if (answers.license) {
-    // ask license question
-    const licenseAnswer = await inquirer.prompt(licenseQuestion);
-  }
+  // write generated readme to a file
+  writeToFile("GENERATED_README.md", readme);
 
-  if (answers.installation) {
-    // ask installation question
-    const installationAnswer = await inquirer.prompt(installationQuestion);
-  }
+  // if (answers.license) {
+  //   // ask license question
+  //   const licenseAnswer = await inquirer.prompt(licenseQuestion);
+  // }
+
+  // if (answers.installation) {
+  //   // ask installation question
+  //   const installationAnswer = await inquirer.prompt(installationQuestion);
+  // }
 };
 
 const generateTitle = (answers) => {
-  return `#Title [MIT](https://img.shields.io/static/v1?label=${answers}&message=License&color=orange)`;
+  return `#Title [MIT](https://img.shields.io/static/v1?label=${answers.title}&message=License&color=orange)`;
 };
 
 const generateTableOfContents = (answers) => {
@@ -103,7 +88,7 @@ const generateTableOfContents = (answers) => {
 const generateDescription = (answers) => {
   return `## Description
 
-  ADD TEXT HERE`;
+  ${answers.description}`;
 };
 
 const generateInstallation = (answers) => {
@@ -112,7 +97,7 @@ const generateInstallation = (answers) => {
  Run the following script to install the packages required for the application:
 
  \`\`\`
- ADD TEXT HERE
+ ${answers.installation}
  \`\`\``;
 };
 
@@ -122,7 +107,7 @@ const generateUsage = (answers) => {
  To use the application run the following script:
 
  \`\`\`
- ADD TEXT HERE
+ ${answers.usage}
  \`\`\``;
 };
 
@@ -132,20 +117,20 @@ const generateTests = (answers) => {
  To use the application run the following script:
 
  \`\`\`
- ADD TEXT HERE
+ ${answers.tests}
  \`\`\``;
 };
 
 const generateContributing = (answers) => {
   return `## Contributing
 
- ADD TEXT HERE`;
+ ${answers.contribution}`;
 };
 
 const generateLicense = (answers) => {
   return `## License
 
- ADD TEXT HERE`;
+ ${answers.license}`;
 };
 
 const generateReadme = (answers) => {
@@ -175,16 +160,4 @@ const writeToFile = (filePath, data) => {
   }
 };
 
-const init = async () => {
-  // prompt the questions using inquirer
-  // inquirer.prompt([{ questions }]).then(function (answers) {});
-
-  // generate readme
-  const readme = generateReadme();
-
-  // write generated readme to a file
-  writeToFile("GENERATED_README.md", readme);
-};
-
-init();
 start();

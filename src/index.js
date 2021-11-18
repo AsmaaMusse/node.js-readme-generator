@@ -72,7 +72,7 @@ const start = async () => {
 };
 
 const generateTitle = (answers) => {
-  return `#Title [MIT](https://img.shields.io/static/v1?label=${answers.title}&message=License&color=orange)`;
+  return `#Title ![MIT](https://img.shields.io/static/v1?label=${answers.license}&message=License&color=orange)`;
 };
 
 const generateTableOfContents = (answers) => {

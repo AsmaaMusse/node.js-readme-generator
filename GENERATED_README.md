@@ -1,4 +1,4 @@
-# Title [MIT](https://img.shields.io/static/v1?label=code&message=License&color=orange)
+# Title ![MIT](https://img.shields.io/static/v1?label=code&message=License&color=orange)
 
 ## Table of Contents
 

@@ -59,16 +59,6 @@ const start = async () => {
 
   // write generated readme to a file
   writeToFile("GENERATED_README.md", readme);
-
-  // if (answers.license) {
-  //   // ask license question
-  //   const licenseAnswer = await inquirer.prompt(licenseQuestion);
-  // }
-
-  // if (answers.installation) {
-  //   // ask installation question
-  //   const installationAnswer = await inquirer.prompt(installationQuestion);
-  // }
 };
 
 const generateTitle = (answers) => {
@@ -150,14 +140,6 @@ const generateReadme = (answers) => {
 
  ${generateLicense(answers)}
  `;
-};
-
-const writeToFile = (filePath, data) => {
-  try {
-    fs.writeFileSync(filePath, data);
-  } catch (error) {
-    console.log(error.message);
-  }
 };
 
 start();

@@ -62,65 +62,84 @@ const start = async () => {
 };
 
 const generateTitle = (answers) => {
-  return `#Title ![MIT](https://img.shields.io/static/v1?label=${answers.license}&message=License&color=orange)`;
+  return `# Title ![MIT](https://img.shields.io/static/v1?label=${answers.license}&message=License&color=orange)`;
 };
 
 const generateTableOfContents = (answers) => {
   return `## Table of Contents
-  - [Description](#description)
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [Tests](#tests)
-  - [Contributing](#contributing)
-  - [License](#license)`;
+    - [Description](#description)
+    - [Installation](#installation)
+    - [Usage](#usage)
+    - [Tests](#tests)
+    - [Contributing](#contributing)
+    - [License](#license)`;
 };
 
 const generateDescription = (answers) => {
   return `## Description
-
-  ${answers.description}`;
+  
+    \`\`\`
+    ${answers.description}
+    \`\`\``;
 };
 
 const generateInstallation = (answers) => {
   return `## Installation
-
- Run the following script to install the packages required for the application:
-
- \`\`\`
- ${answers.installation}
- \`\`\``;
+  
+   Run the following script to install the packages required for the application:
+  
+   \`\`\`
+   ${answers.installation}
+   \`\`\``;
 };
 
 const generateUsage = (answers) => {
   return `## Usage
-
- To use the application run the following script:
-
- \`\`\`
- ${answers.usage}
- \`\`\``;
+  
+   To use the application run the following script:
+  
+   \`\`\`
+   ${answers.usage}
+   \`\`\``;
 };
 
 const generateTests = (answers) => {
   return `## Tests
-
- To use the application run the following script:
-
- \`\`\`
- ${answers.tests}
- \`\`\``;
+  
+   To use the application run the following script:
+  
+   \`\`\`
+   ${answers.tests}
+   \`\`\``;
 };
 
 const generateContributing = (answers) => {
   return `## Contributing
 
- ${answers.contribution}`;
+   To contribute to the application you could:
+   
+   \`\`\`
+   ${answers.contribution}
+   \`\`\``;
 };
 
 const generateLicense = (answers) => {
   return `## License
+  
+  \`\`\`
+   ${answers.license}
+   \`\`\``;
+};
 
- ${answers.license}`;
+const generateContacts = (answers) => {
+  return `## Contact info
+  
+  For further question, contact me on:
+  
+  \`\`\`
+   ${answers.github}
+   ${answers.email}
+   \`\`\``;
 };
 
 const generateReadme = (answers) => {
@@ -139,7 +158,17 @@ const generateReadme = (answers) => {
  ${generateContributing(answers)}
 
  ${generateLicense(answers)}
+
+ ${generateContacts(answers)}
  `;
+};
+
+const writeToFile = (filePath, data) => {
+  try {
+    fs.writeFileSync(filePath, data);
+  } catch (error) {
+    console.log(error.message);
+  }
 };
 
 start();

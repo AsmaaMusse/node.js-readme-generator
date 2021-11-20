@@ -58,25 +58,29 @@ const start = async () => {
   const readme = generateReadme(answers);
 
   // write generated readme to a file
-  writeToFile("GENERATED_README.md", readme);
+  writeToFile("generatedReadme.md", readme);
 };
 
 const generateTitle = (answers) => {
-  return `# Title ![MIT](https://img.shields.io/static/v1?label=${answers.license}&message=License&color=orange)`;
+  return `# ${answers.title} ![MIT](https://img.shields.io/static/v1?label=${answers.license}&message=License&color=orange)`;
 };
 
-const generateTableOfContents = (answers) => {
+const generateTableOfContents = () => {
   return `## Table of Contents
-    - [Description](#description)
-    - [Installation](#installation)
-    - [Usage](#usage)
-    - [Tests](#tests)
-    - [Contributing](#contributing)
-    - [License](#license)`;
+   \`
+    1. [Description](#description)
+    2. [Installation](#installation)
+    3. [Usage](#usage)
+    4. [Tests](#tests)
+    5. [Contributing](#contributing)
+    6. [License](#license)
+    7. [contacts](#contacts)`;
 };
 
 const generateDescription = (answers) => {
   return `## Description
+   
+   <a id="description"></a>
   
     \`\`\`
     ${answers.description}
@@ -85,6 +89,8 @@ const generateDescription = (answers) => {
 
 const generateInstallation = (answers) => {
   return `## Installation
+
+   <a id="installation"></a>
   
    Run the following script to install the packages required for the application:
   
@@ -95,6 +101,8 @@ const generateInstallation = (answers) => {
 
 const generateUsage = (answers) => {
   return `## Usage
+
+   <a id="usage"></a>
   
    To use the application run the following script:
   
@@ -105,6 +113,8 @@ const generateUsage = (answers) => {
 
 const generateTests = (answers) => {
   return `## Tests
+
+   <a id="tests"></a>
   
    To use the application run the following script:
   
@@ -115,6 +125,8 @@ const generateTests = (answers) => {
 
 const generateContributing = (answers) => {
   return `## Contributing
+   
+   <a id="contributing"></a>
 
    To contribute to the application you could:
    
@@ -125,6 +137,8 @@ const generateContributing = (answers) => {
 
 const generateLicense = (answers) => {
   return `## License
+
+  <a id="license"></a>
   
   \`\`\`
    ${answers.license}
@@ -133,9 +147,11 @@ const generateLicense = (answers) => {
 
 const generateContacts = (answers) => {
   return `## Contact info
+
+  <a id="contacts"></a>
   
   For further question, contact me on:
-  
+
   \`\`\`
    ${answers.github}
    ${answers.email}

@@ -67,14 +67,20 @@ const generateTitle = (answers) => {
 
 const generateTableOfContents = () => {
   return `## Table of Contents
-   \`
-    1. [Description](#description)
-    2. [Installation](#installation)
-    3. [Usage](#usage)
-    4. [Tests](#tests)
-    5. [Contributing](#contributing)
-    6. [License](#license)
-    7. [contacts](#contacts)`;
+   
+  1. [Description](#description) 
+      <br>
+  2. [Installation](#installation) 
+      <br>
+  3. [Usage](#usage)
+      <br>
+  4. [Tests](#tests) 
+      <br>
+  5. [Contributing](#contributing) 
+      <br>
+  6. [License](#license) 
+      <br>
+  7. [contacts](#contacts)`;
 };
 
 const generateDescription = (answers) => {

@@ -4,10 +4,13 @@
 
 For this project, I dynamically generate a readme using node javascript.
 
-Deployed link:
-Github page:
+Demo Video: https://drive.google.com/file/d/17Q2iQHGY02wJAZZYZrEcEgBCONs7L5Hx/view?usp=sharing
 
-##
+Github page: https://github.com/AsmaaMusse/readme-generator/tree/dev
+
+## What did i do
+
+I created a command-line application that dynamically generates a professional README.md file from the user's input using the Inquirer package.
 
 ## Technologies used:
 
@@ -16,3 +19,9 @@ Github page:
 - Node.js
 
 ## Screenshots:
+
+Index.js:
+![index.js.png](./src/images/index.js-screenshot.png)
+
+Readme:
+![readme.png](./src/images/generated-readme-screenshot.png)

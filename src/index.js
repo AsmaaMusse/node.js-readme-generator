@@ -1,6 +1,5 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const util = require("./util");
 
 // Declare questions
 const questions = [
@@ -88,6 +87,8 @@ const generateDescription = (answers) => {
    
    <a id="description"></a>
   
+   Description for the project:
+
     \`\`\`
     ${answers.description}
     \`\`\``;

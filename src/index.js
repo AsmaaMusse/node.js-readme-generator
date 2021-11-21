@@ -73,7 +73,7 @@ const generateTableOfContents = () => {
       <br>
   3. [Usage](#usage)
       <br>
-  4. [Tests](#tests) 
+  4. [Test](#test) 
       <br>
   5. [Contributing](#contributing) 
       <br>
@@ -118,15 +118,15 @@ const generateUsage = (answers) => {
    \`\`\``;
 };
 
-const generateTests = (answers) => {
-  return `## Tests
+const generateTest = (answers) => {
+  return `## Test
 
-   <a id="tests"></a>
+   <a id="test"></a>
   
    To use the application run the following script:
   
    \`\`\`
-   ${answers.tests}
+   ${answers.test}
    \`\`\``;
 };
 
@@ -147,7 +147,7 @@ const generateLicense = (answers) => {
 
   <a id="license"></a>
   
-  \`\`\`
+   \`\`\`
    ${answers.license}
    \`\`\``;
 };
@@ -176,7 +176,7 @@ const generateReadme = (answers) => {
 
  ${generateUsage(answers)}
 
- ${generateTests(answers)}
+ ${generateTest(answers)}
 
  ${generateContributing(answers)}
 

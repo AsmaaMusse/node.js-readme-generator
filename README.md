@@ -1,4 +1,4 @@
-# Readme-generator ![MIT](https://img.shields.io/static/v1?label=MIT&message=License&color=orange)
+# Readme Generator ![MIT](https://img.shields.io/static/v1?label=MIT&message=License&color=orange)
 
 
 ## Overview
